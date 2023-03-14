@@ -6,75 +6,44 @@
 //
 
 import SwiftUI
- 
+
 struct HomeView: View {
     
     @EnvironmentObject var model:ContentModel // get access
     
     var body: some View {
-   
-        ScrollView {
-            
-            LazyVStack {
+        
+        NavigationView {
+            VStack(alignment: .leading){
                 
-                // Loop through each modules
-                ForEach(model.modules) { module in
+                Text("What do you want to do today?")
+                    .padding(.leading, 20)
+                ScrollView {
                     
-                    // Learing Card
-                    
-                    ZStack {
+                    LazyVStack {
                         
-                        Rectangle()
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                            .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit)
-                        
-                        HStack {
+                        // Loop through each modules
+                        ForEach(model.modules) { module in
                             
-                            // Image
                             
-                            Image("swift")
-                                .resizable()
-                                .frame(width: 116, height: 116)
-                                .clipShape(Circle())
-                            
-                            //Text
-                            VStack(alignment: .leading) {
+                            VStack(spacing: 20) {
                                 
-                                // Headline
-                                Text("Learn Swift")
-                                    .bold()
+                                // Learing Card
+                                HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lesson", time: module.content.time)
                                 
-                                // Description
-                                Text("Some description")
+                                // Test Card
+                                HomeViewRow(image: module.test.image, title: "Learn \(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lesson", time: module.test.time)
                                 
-                                // Icons
-                                HStack {
-                                    
-                                    // number of lesson / questions
-                                    Image(systemName: "text.book.closed")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        Text("20 Lesson")
-                                        .font(.caption)
-                                    
-                                    // Time
-                                    Image(systemName: "clock")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        Text("2 Hours")
-                                        .font(.caption)
-                                }
                             }
+                            
                         }
                     }
-                    
-                    // Test Card
+                    .padding()
                 }
             }
-                .padding()
+            .navigationTitle("Get Started")
         }
+        
     }
 }
 
