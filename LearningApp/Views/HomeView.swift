@@ -28,9 +28,16 @@ struct HomeView: View {
                             
                             VStack(spacing: 20) {
                                 
-                                // Learing Card
-                                HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lesson", time: module.content.time)
-                                
+                                NavigationLink(destination: ContentView().onAppear(perform: {
+                                    model.beginModule(module.id)
+                                }), label: {
+                                    
+                                    
+                                    // Learing Card
+                                    HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lesson", time: module.content.time)
+                                    
+                                })
+                              
                                 // Test Card
                                 HomeViewRow(image: module.test.image, title: "Learn \(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lesson", time: module.test.time)
                                 
@@ -38,6 +45,7 @@ struct HomeView: View {
                             
                         }
                     }
+                    .accentColor(.black)
                     .padding()
                 }
             }
@@ -47,7 +55,7 @@ struct HomeView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(ContentModel())
