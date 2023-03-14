@@ -7,40 +7,37 @@
 
 import Foundation
 
-
 class ContentModel: ObservableObject {
     
-    @Published var modules = [Module]() // store modules
-    
+    @Published var modules = [Module]()
     
     var styleData: Data?
     
-    
     init() {
+        
         getLocalData()
+        
     }
-    
     
     func getLocalData() {
         
-        // get  a url to the json file
+        // Get a url to the json file
         let jsonUrl = Bundle.main.url(forResource: "data", withExtension: "json")
-      
+        
         do {
-            
             // Read the file into a data object
             let jsonData = try Data(contentsOf: jsonUrl!)
             
-            // Try to decode the json into a array of modules
+            // Try to decode the json into an array of modules
             let jsonDecoder = JSONDecoder()
-            let modules =  try  jsonDecoder.decode([Module].self, from: jsonData)
+            let modules = try jsonDecoder.decode([Module].self, from: jsonData)
             
             // Assign parsed modules to modules property
             self.modules = modules
-            
-        }catch {
+        }
+        catch {
             // TODO log error
-            print("Could not parse local data")
+            print("Couldn't parse local data")
         }
         
         // Parse the style data
@@ -52,12 +49,11 @@ class ContentModel: ObservableObject {
             let styleData = try Data(contentsOf: styleUrl!)
             
             self.styleData = styleData
-            
-            
-            
-        } catch {
-            // Log error
-            print("Could not parse style data")
         }
+        catch {
+            // Log error
+            print("Couldn't parse style data")
+        }
+        
     }
 }
