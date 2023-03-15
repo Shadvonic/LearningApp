@@ -18,6 +18,9 @@
 		682878FB29C02B3E009CAFE0 /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682878FA29C02B3E009CAFE0 /* HomeViewRow.swift */; };
 		682878FD29C03326009CAFE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682878FC29C03326009CAFE0 /* ContentView.swift */; };
 		682878FF29C03D69009CAFE0 /* ContentViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682878FE29C03D69009CAFE0 /* ContentViewRow.swift */; };
+		6828790129C03FAF009CAFE0 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6828790029C03FAF009CAFE0 /* ContentDetailView.swift */; };
+		689D263D29C1ACF5001FE496 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D263C29C1ACF5001FE496 /* AVKit.framework */; };
+		689D263F29C1AE50001FE496 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689D263E29C1AE50001FE496 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		682878FA29C02B3E009CAFE0 /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
 		682878FC29C03326009CAFE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		682878FE29C03D69009CAFE0 /* ContentViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRow.swift; sourceTree = "<group>"; };
+		6828790029C03FAF009CAFE0 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		689D263C29C1ACF5001FE496 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		689D263E29C1AE50001FE496 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689D263D29C1ACF5001FE496 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +58,7 @@
 			children = (
 				682878DE29C013E9009CAFE0 /* LearningApp */,
 				682878DD29C013E9009CAFE0 /* Products */,
+				689D263B29C1ACF5001FE496 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +100,7 @@
 				682878FA29C02B3E009CAFE0 /* HomeViewRow.swift */,
 				682878FC29C03326009CAFE0 /* ContentView.swift */,
 				682878FE29C03D69009CAFE0 /* ContentViewRow.swift */,
+				6828790029C03FAF009CAFE0 /* ContentDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +118,7 @@
 			children = (
 				682878F329C015FB009CAFE0 /* data.json */,
 				682878F529C01600009CAFE0 /* style.html */,
+				689D263E29C1AE50001FE496 /* Constants.swift */,
 			);
 			path = Reasources;
 			sourceTree = "<group>";
@@ -126,6 +136,14 @@
 				682878F829C01816009CAFE0 /* Models.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		689D263B29C1ACF5001FE496 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				689D263C29C1ACF5001FE496 /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +221,12 @@
 				682878E229C013E9009CAFE0 /* HomeView.swift in Sources */,
 				682878FB29C02B3E009CAFE0 /* HomeViewRow.swift in Sources */,
 				682878FD29C03326009CAFE0 /* ContentView.swift in Sources */,
+				6828790129C03FAF009CAFE0 /* ContentDetailView.swift in Sources */,
 				682878FF29C03D69009CAFE0 /* ContentViewRow.swift in Sources */,
 				682878E029C013E9009CAFE0 /* LearningApp.swift in Sources */,
 				682878F229C014A4009CAFE0 /* ContentModel.swift in Sources */,
 				682878F929C01816009CAFE0 /* Models.swift in Sources */,
+				689D263F29C1AE50001FE496 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
