@@ -22,6 +22,7 @@
 		6899CD5129C1D1D8000D209C /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899CD5029C1D1D8000D209C /* CodeTextView.swift */; };
 		689D263D29C1ACF5001FE496 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D263C29C1ACF5001FE496 /* AVKit.framework */; };
 		689D263F29C1AE50001FE496 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689D263E29C1AE50001FE496 /* Constants.swift */; };
+		68DCA7B629C42C090070343B /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DCA7B529C42C090070343B /* RectangleCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		6899CD5029C1D1D8000D209C /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		689D263C29C1ACF5001FE496 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		689D263E29C1AE50001FE496 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		68DCA7B529C42C090070343B /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				682878FE29C03D69009CAFE0 /* ContentViewRow.swift */,
 				6828790029C03FAF009CAFE0 /* ContentDetailView.swift */,
 				6899CD5029C1D1D8000D209C /* CodeTextView.swift */,
+				68DCA7B529C42C090070343B /* RectangleCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				6899CD5129C1D1D8000D209C /* CodeTextView.swift in Sources */,
 				682878F229C014A4009CAFE0 /* ContentModel.swift in Sources */,
 				682878F929C01816009CAFE0 /* Models.swift in Sources */,
+				68DCA7B629C42C090070343B /* RectangleCard.swift in Sources */,
 				689D263F29C1AE50001FE496 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

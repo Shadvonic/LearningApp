@@ -30,9 +30,13 @@ struct HomeView: View {
                             
                             VStack(spacing: 20) {
                                 
-                                NavigationLink(destination: ContentView().onAppear(perform: {
+                                NavigationLink(
+                                    destination: ContentView().onAppear(perform: {
                                     model.beginModule(module.id)
-                                }), label: {
+                                }),
+                                    tag: module.id,
+                                    selection: $model.currentContentSelected,
+                                    label: {
                                     
                                     
                                     // Learing Card
