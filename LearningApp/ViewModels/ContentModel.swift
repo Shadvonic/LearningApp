@@ -21,6 +21,11 @@ class ContentModel: ObservableObject {
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    // current lesson explanation
+    @Published var lessonDescription = NSAttributedString()
+    
+    
+    
     var styleData: Data?
     
     init() {
@@ -113,6 +118,8 @@ class ContentModel: ObservableObject {
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
         
         
+        lessonDescription = addStyling(currentLesson!.explanation)
+        
         
     }
     
@@ -125,7 +132,7 @@ class ContentModel: ObservableObject {
     }
     
     
-    func nexrLesson() {
+    func nextLesson() {
         // Advance the lessoon index
         currentLessonIndex += 1
         
@@ -133,12 +140,42 @@ class ContentModel: ObservableObject {
         if currentLessonIndex < currentModule!.content.lessons.count {
             // set the the current lessoon property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            lessonDescription = addStyling(currentLesson!.explanation)
         } else {
             // reset the lessopn state
             currentLesson = nil
             currentLessonIndex = 0
         }
         
+    }
+    
+    
+    
+    // MARK: - Code Styling
+    
+    private func addStyling(_ htmlString: String) -> NSAttributedString {
+        
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        // Add the styling data
+        if styleData != nil {
+            data.append(self.styleData!)
+        }
+
+        
+        // add the html data
+        data.append(Data(htmlString.utf8))
+        
+        // Convert to attributted string
+   
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                
+                resultString = attributedString
+            }
+    
+        
+        return resultString
     }
     
 }

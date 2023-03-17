@@ -27,13 +27,13 @@ struct ContentDetailView: View {
             }
             
             // TODO: Description
-            
+            CodeTextView()
             
             // show next Lesson button, only if there is a next lessoon
             if model.hasNextLesson() {
                 Button(action: {
                     // Advance the lesson
-                    model.nexrLesson()
+                    model.nextLesson()
                 }, label: {
                     ZStack {
                         
@@ -55,6 +55,7 @@ struct ContentDetailView: View {
             }
            
         }
+        .padding()
   
  
     }
